@@ -24,7 +24,7 @@ import java.nio.FloatBuffer;
 
 @Mixin(WorldRenderer.class)
 abstract class WorldRendererMixin implements SmoothWorldRenderer {
-    @Shadow private ChunkRenderer[] field_1794;
+    @Shadow private ChunkRenderer[] chunkRenderers;
 
     @Unique
     private VboPool smoothbeta_vboPool;
@@ -66,7 +66,7 @@ abstract class WorldRendererMixin implements SmoothWorldRenderer {
             locals = LocalCapture.CAPTURE_FAILHARD
     )
     private void smoothbeta_addBufferToRegion(int j, int k, int d, double par4, CallbackInfoReturnable<Integer> cir, int var6, LivingEntity var7, double var8, double var10, double var12, int var14, int var15, ChunkBuilder var16, int var17) {
-        ((RenderRegion) this.field_1794[var17]).addBuffer(((SmoothChunkRenderer) var16).smoothbeta_getBuffer(d));
+        ((RenderRegion) this.chunkRenderers[var17]).addBuffer(((SmoothChunkRenderer) var16).smoothbeta_getBuffer(d));
     }
 
     @Redirect(
