@@ -25,7 +25,7 @@ public abstract class MinecraftMixin {
     private void smoothbeta_init(Minecraft instance, Screen screen, Operation<Void> original) {
         OperatingSystem os = ((MinecraftAccessor) this).smoothbeta_getOperatingSystem();
 
-        if (OperatingSystem.LINUX == os) {
+        if (OperatingSystem.MACOS == os) {
             screen = new IncompatibleOSScreen();
         }
 
